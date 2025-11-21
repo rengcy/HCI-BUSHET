@@ -13,26 +13,47 @@
       <h2 id="signupTitle">Create Your Account</h2>
       <p class="muted">Let's start with your basic information</p>
 
+      <!-- Global error message (hidden by default) -->
+      <div id="signupErrorMessage" class="error-message" role="alert" aria-hidden="true">
+        Please fix the highlighted fields before continuing.
+      </div>
+
       <form id="signupForm" novalidate>
         <div class="row">
           <div class="col">
             <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            <input type="text" id="firstName" name="firstName" placeholder="John" required autocomplete="given-name" />
+            <div class="field-error" id="err-firstName" aria-hidden="true"></div>
           </div>
           <div class="col">
             <label for="lastName">Last Name *</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required autocomplete="family-name" />
+            <div class="field-error" id="err-lastName" aria-hidden="true"></div>
           </div>
         </div>
 
         <div class="field">
           <label for="signupEmail">Email Address *</label>
-          <input type="email" id="signupEmail" name="signupEmail" placeholder="john.doe@example.com" required />
+          <input type="email" id="signupEmail" name="signupEmail" placeholder="john.doe@example.com" required autocomplete="email" />
+          <div class="field-error" id="err-signupEmail" aria-hidden="true"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Create Password *</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required autocomplete="new-password" />
+          <div class="field-error" id="err-password" aria-hidden="true"></div>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password *</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required autocomplete="new-password" />
+          <div class="field-error" id="err-confirmPassword" aria-hidden="true"></div>
         </div>
 
         <div class="field">
           <label for="phone">Phone Number (Optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" />
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" />
+          <div class="field-error" id="err-phone" aria-hidden="true"></div>
         </div>
 
         <div class="actions">

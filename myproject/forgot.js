@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         // redirect to login page after showing message briefly
         window.location.href = 'login.html';
-      }, 1200);
+      }, 120000);
     });
   }
 });
