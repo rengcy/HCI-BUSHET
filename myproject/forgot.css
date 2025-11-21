@@ -1,0 +1,158 @@
+/* Forgot password page styles — adjusted spacing inside the card */
+
+html, body { height: 100%; }
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#fbfdff,#f7f9fc);
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 40px 20px;
+  color: #0b1220;
+}
+
+/* Top back link row */
+.top-row {
+  position: absolute;
+  left: 32px;
+  top: 28px;
+}
+
+.back-link {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:transparent;
+  border:none;
+  color:#374151;
+  font-size:15px;
+  cursor:pointer;
+  padding:6px 8px;
+}
+.back-link svg { transform: translateY(1px); }
+
+/* Center block - constrain width to match login page */
+.center-area {
+  width: 100%;
+  max-width: 400px; /* MATCHES login page width */
+  margin: 0 auto;
+  text-align:center;
+}
+
+/* purple rounded icon */
+.logo-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(90deg,#7c3aed,#a78bfa);
+  border-radius: 16px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin: 8px auto 20px; /* tightened top, increased space below icon */
+  box-shadow: 0 16px 40px rgba(124,58,237,0.12);
+}
+
+/* headings */
+.title {
+  font-size:20px;
+  margin: 6px 0 12px; /* increased bottom spacing to separate from subtitle */
+  color:#0b1220;
+}
+.subtitle {
+  color:#6b7280;
+  margin-bottom: 20px; /* slightly larger gap before the card */
+}
+
+/* card - constrained to the same width as login card, increased inner padding */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.06);
+  padding: 40px 40px; /* requested inner padding */
+  margin: 10px auto; /* reduced top/bottom margin to compensate for larger padding */
+  max-width: 400px; /* MATCHES login page card width */
+  width: 100%;
+  text-align:left;
+}
+
+/* form layout */
+label {
+  font-size:13px;
+  color:#374151;
+  display:block;
+  margin-bottom:12px; /* increased gap between label and input */
+}
+.input-with-icon {
+  position:relative;
+}
+.input-with-icon .input-icon {
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.input-with-icon input {
+  width:100%;
+  padding:16px 18px 16px 52px; /* increased vertical & left padding for balance with card */
+  border-radius:10px;
+  border:1px solid #e6e9ef;
+  font-size:14px;
+  background:#fff;
+  color:#111827;
+}
+
+/* helper hint */
+.hint {
+  font-size:13px;
+  color:#9ca3af;
+  margin:14px 0 24px; /* more space before CTA */
+}
+
+/* CTA */
+.btn-primary {
+  width:100%;
+  padding:16px 18px; /* increased for visual weight inside larger padding */
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  color:#fff;
+  background: linear-gradient(90deg,#6d28d9,#a21caf);
+  font-size:15px;
+  box-shadow: 0 8px 18px rgba(107,70,193,0.16);
+}
+
+/* success message */
+.success {
+  margin-top:18px;
+  color:#059669;
+  font-size:14px;
+}
+
+/* bottom link */
+.footer-link {
+  text-align:center;
+  margin-top:22px; /* slightly increased to create breathing room */
+  color:#6b7280;
+}
+.footer-link a {
+  color:#6d28d9;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* small responsive adjustments */
+@media (max-width:640px) {
+  .card { padding: 28px 20px; } /* reduce padding on small screens */
+  .logo-icon { width:64px; height:64px; border-radius:12px; }
+}
+
+/* animation helpers (reuse animation names used elsewhere) */
+@keyframes fadeOutUp {
+  from { opacity:1; transform: translateY(0); }
+  to { opacity:0; transform: translateY(-18px); }
+}
+.fade-out { animation: fadeOutUp 360ms ease-in forwards; pointer-events:none; }

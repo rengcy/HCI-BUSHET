@@ -1,0 +1,78 @@
+/* Signup page styles (card-centered, soft shadows, purple continue button) */
+
+html, body { height: 100%; }
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffffff, #f7fafc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* center card */
+.signup-screen { width: 100%; display:flex; align-items:center; justify-content:center; }
+.signup-card {
+  width: 100%;
+  max-width: 760px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 34px;
+  box-shadow: 0 12px 30px rgba(15,23,42,0.06);
+  animation: fadeInDown 300ms ease-out both;
+}
+
+/* icon and headings */
+.signup-icon {
+  width: 56px; height:56px; border-radius: 12px; margin: 0 auto 12px;
+  background: linear-gradient(90deg,#7c3aed,#a78bfa);
+  color: white; display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:20px;
+}
+
+.signup-card h2 { text-align:center; font-size:20px; margin-bottom:6px; color:#0b1220; }
+.signup-card .muted { text-align:center; color:#6b7280; margin-bottom:20px; }
+
+/* form layout */
+.row { display:flex; gap:16px; margin-bottom:16px; }
+.col { flex:1; display:flex; flex-direction:column; }
+.field { display:flex; flex-direction:column; margin-bottom:16px; }
+
+label { font-size:13px; color:#374151; margin-bottom:8px; }
+input[type="text"], input[type="email"], input[type="tel"] {
+  padding:12px 14px; border-radius:10px; border:1px solid #e6e9ef; font-size:14px;
+  background: #fff; color:#111827;
+}
+input::placeholder { color:#9ca3af; }
+
+/* actions */
+.actions { display:flex; gap:12px; margin-top:8px; justify-content:space-between; align-items:center; }
+.btn-outline {
+  padding:12px 20px; border-radius:8px; border:1px solid #e6e9ef; background:transparent; cursor:pointer;
+  color:#374151; flex:1;
+}
+.btn-continue {
+  padding:12px 20px; border-radius:8px; border:none; cursor:pointer; color:white; flex:1;
+  background: linear-gradient(90deg,#6d28d9,#a21caf);
+}
+
+/* small screens */
+@media (max-width:640px) {
+  .row { flex-direction:column; }
+  .actions { flex-direction:column; }
+}
+
+/* animations */
+@keyframes fadeInDown {
+  from { opacity:0; transform: translateY(-8px); }
+  to { opacity:1; transform: translateY(0); }
+}
+.fade-out {
+  animation: fadeOutUp 360ms ease-in forwards;
+}
+@keyframes fadeOutUp {
+  from { opacity:1; transform: translateY(0); }
+  to { opacity:0; transform: translateY(-18px); }
+}
